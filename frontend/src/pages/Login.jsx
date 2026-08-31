@@ -13,16 +13,16 @@ const Login = () => {
     try {
       const response = await axiosInstance.post('/api/auth/login', formData);
       login(response.data);
-      navigate('/tasks');
+      navigate('/schedule');
     } catch (error) {
-      alert('Login failed. Please try again.');
+      alert(error.response?.data?.message || 'Login failed. Please try again.');
     }
   };
 
   return (
     <div className="max-w-md mx-auto mt-20">
       <form onSubmit={handleSubmit} className="bg-white p-6 shadow-md rounded">
-        <h1 className="text-2xl font-bold mb-4 text-center">Login</h1>
+        <h1 className="text-2xl font-bold mb-4 text-center">Zerow Gym login</h1>
         <input
           type="email"
           placeholder="Email"
@@ -40,6 +40,7 @@ const Login = () => {
         <button type="submit" className="w-full bg-blue-600 text-white p-2 rounded">
           Login
         </button>
+        <p className="mt-4 text-center text-sm">New member? <a href="/register" className="text-blue-700 underline">Create an account</a></p>
       </form>
     </div>
   );

@@ -21,4 +21,14 @@ const protect = async (req, res, next) => {
     }
 };
 
-module.exports = { protect };
+const adminOnly = (req, res, next) => {
+    if (req.user && req.user.role === 'admin') return next();
+    return res.status(403).json({ message: 'Admin access is required' });
+};
+
+const memberOnly = (req, res, next) => {
+    if (req.user && req.user.role === 'member') return next();
+    return res.status(403).json({ message: 'Member access is required' });
+};
+
+module.exports = { protect, adminOnly, memberOnly };

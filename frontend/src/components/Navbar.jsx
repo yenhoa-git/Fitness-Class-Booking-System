@@ -12,12 +12,12 @@ const Navbar = () => {
 
   return (
     <nav className="bg-blue-600 text-white p-4 flex justify-between items-center">
-      <Link to="/" className="text-2xl font-bold">Task Manager</Link>
+      <Link to="/" className="text-2xl font-bold">Zerow Gym</Link>
       <div>
         {user ? (
           <>
-            <Link to="/tasks" className="mr-4">Tasks</Link>
-            <Link to="/profile" className="mr-4">Profile</Link>
+            <Link to="/schedule" className="mr-4">Schedule</Link>
+            {user.role === 'admin' && <Link to="/admin/classes" className="mr-4">Manage classes</Link>}
             <button
               onClick={handleLogout}
               className="bg-red-500 px-4 py-2 rounded hover:bg-red-700"
@@ -32,7 +32,7 @@ const Navbar = () => {
               to="/register"
               className="bg-green-500 px-4 py-2 rounded hover:bg-green-700"
             >
-              Register
+              Sign up
             </Link>
           </>
         )}
