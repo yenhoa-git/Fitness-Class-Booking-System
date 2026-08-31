@@ -24,3 +24,38 @@
 * **GitHub Account** [[https://github.com/signup?source=login](https://github.com/signup?source=login)]** **
 
 ---
+
+# Zerow Fitness Class Booking System
+
+## Live deployment
+Public URL: http://<EC2-public-ip>
+
+## Features
+- Member: register, login, view schedule, view detail, book, cancel booking
+- Admin: login by role, create, edit, cancel classes
+
+## Architecture
+React frontend → Nginx → Express API → MongoDB Atlas
+
+## Local setup
+1. npm install
+2. npm install --prefix backend
+3. npm install --prefix frontend
+4. Configure backend/.env
+5. npm run seed:admin --prefix backend
+6. npm run dev
+
+## Environment variables
+MONGO_URI
+JWT_SECRET
+PORT
+
+## EC2 manual deployment
+Document the commands and configuration steps.
+
+## Known limitations
+- No email/push notifications when an Admin cancels a class
+- No password-reset implementation
+- No waitlist
+- No HTTPS/domain name in the assessment deployment
+- Authentication session is not persisted after a browser refresh
