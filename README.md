@@ -28,7 +28,7 @@
 # Zerow Fitness Class Booking System
 
 ## Live deployment
-Public URL: http://<EC2-public-ip>
+Public URL: http://3.107.194.166
 
 ## Features
 - Member: register, login, view schedule, view detail, book, cancel booking
